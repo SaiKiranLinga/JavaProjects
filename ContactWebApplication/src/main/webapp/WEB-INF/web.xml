@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+ <filter>
+    <filter-name>ResponseOverrideFilter</filter-name>
+    <filter-class>org.displaytag.filter.ResponseOverrideFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ResponseOverrideFilter</filter-name>
+    <url-pattern>/ProcessContact</url-pattern>
+  </filter-mapping>
+
+	<display-name>ContactSearch</display-name>
+
+	<welcome-file-list>
+		<welcome-file>Contact.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>SaveContact</servlet-name>
+		<servlet-class>com.contact.controller.SaveContact</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SaveContact</servlet-name>
+		<url-pattern>/ProcessContact</url-pattern>
+	</servlet-mapping>
+
+</web-app>
+ 
